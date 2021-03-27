@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>203b8763-fff9-4477-bdae-0a569cc92cdd</ProjectGuid>
+    <ProjectGuid>{203B8763-FFF9-4477-BDAE-0A569CC92CDD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Win32ApiHelper</RootNamespace>
@@ -31,24 +31,37 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Impersonator.cs" />
+    <Compile Include="Win32ApiService.cs" />
+    <Compile Include="Win32Api\Enums\ExecutionState.cs" />
+    <Compile Include="Win32Api\Enums\LogonProvider.cs" />
+    <Compile Include="Win32Api\Enums\LogonType.cs" />
+    <Compile Include="Win32Api\Enums\SecurityImpersonationLevel.cs" />
+    <Compile Include="Win32Api\Enums\TokenType.cs" />
+    <Compile Include="Win32Api\Enums\WtsConnectState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Win32Api\Structs\ProcessInformation.cs" />
+    <Compile Include="Win32Api\Structs\SecurityAttributes.cs" />
+    <Compile Include="Win32Api\Structs\StartupInfo.cs" />
+    <Compile Include="Win32Api\Win32ApiException.cs" />
+    <Compile Include="Win32Api\WindowsInteropApi.cs" />
+    <Compile Include="Win32Api\WindowsInteropConstants.cs" />
+    <Compile Include="Win32Api\Structs\WtsSessionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
